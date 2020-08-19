@@ -28,7 +28,7 @@ const report = results => results.forEach((r, i) =>
 console.log('Jump Report (all jumps)')
 mapSeriesAsync(distances, howFarCanIJumpAsync, {stop: false})
     .then(report)
-    .catch(console.error)
+    .catch(console.error) // Won't hit it, but never hurts to check
     .then(() => console.log('\nJump Report (report all jumps unless I missed one)'))
     .then(() => mapSeriesAsync(distances, howFarCanIJumpAsync, {stop: true}))
     .then(report)
